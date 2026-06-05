@@ -1,0 +1,684 @@
+/* =========================================
+   NATURASSIC — Page Circuits & Faune
+   Styles spécifiques, s'appuie sur style.css
+========================================= */
+
+/* ---- BREADCRUMB ---- */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--size-xs);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 2rem;
+}
+
+.breadcrumb a { color: rgba(255,255,255,0.55); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--khaki); }
+.breadcrumb span { color: rgba(255,255,255,0.3); }
+
+
+/* =========================================
+   EN-TÊTE DE PAGE
+========================================= */
+.circuits-page-header {
+  height: 62vh;
+  min-height: 480px;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  overflow: hidden;
+}
+
+.circuits-page-header-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.circuits-page-header-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 65%, rgba(40,65,57,0.9) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circuits-page-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  will-change: transform;
+  display: block;
+}
+
+.circuits-page-header-text {
+  background: var(--emerald);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 clamp(2.5rem, 5vw, 4.5rem) clamp(2.5rem, 5vw, 4rem);
+}
+
+.circuits-page-header-text h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.circuits-page-header-intro {
+  color: rgba(255,255,255,0.68);
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  font-weight: 300;
+  max-width: 38ch;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SOMMAIRE DES CIRCUITS (ancres rapides)
+========================================= */
+.circuits-nav {
+  background: var(--bg-light);
+  border-bottom: 1px solid rgba(40,65,57,0.1);
+}
+
+.circuits-nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1rem var(--gutter);
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.circuits-nav-label {
+  font-size: var(--size-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-right: 0.75rem;
+}
+
+.circuit-anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--size-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(40,65,57,0.18);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.circuit-anchor:hover {
+  border-color: var(--emerald);
+  color: var(--emerald);
+  background: rgba(40,65,57,0.04);
+}
+
+.circuit-anchor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-facile    { background: #5a7a5e; }
+.dot-moyen     { background: var(--earth); }
+.dot-difficile { background: #8a3030; }
+
+
+/* =========================================
+   LIGNES ÉDITORIALES — CIRCUITS
+========================================= */
+.circuit-row {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  min-height: 82vh;
+  border-bottom: 1px solid rgba(40,65,57,0.08);
+}
+
+/* Inversion image/texte */
+.circuit-row--reverse {
+  grid-template-columns: 45fr 55fr;
+}
+
+.circuit-row--reverse .circuit-row-image  { order: 2; }
+.circuit-row--reverse .circuit-row-content { order: 1; }
+
+/* Panneau image */
+.circuit-row-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.circuit-row-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  display: block;
+  transition: transform 700ms ease;
+}
+
+.circuit-row:hover .circuit-row-image img {
+  transform: scale(1.02);
+}
+
+/* Panneau texte */
+.circuit-row-content {
+  background: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 6vw, 7rem) clamp(2.5rem, 5vw, 5rem);
+}
+
+/* Alternance fond sur les lignes paires */
+.circuit-row:nth-of-type(even) .circuit-row-content {
+  background: var(--bg-mid);
+}
+
+/* ---- Difficulté ---- */
+.circuit-difficulty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.circuit-difficulty::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  flex-shrink: 0;
+}
+
+.circuit-difficulty.facile    { color: #4a6e4e; }
+.circuit-difficulty.facile::before   { background: #4a6e4e; }
+
+.circuit-difficulty.moyen     { color: var(--earth); }
+.circuit-difficulty.moyen::before    { background: var(--earth); }
+
+.circuit-difficulty.difficile { color: #8a3030; }
+.circuit-difficulty.difficile::before{ background: #8a3030; }
+
+/* ---- Titre circuit ---- */
+.circuit-row-content h2 {
+  color: var(--emerald);
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  margin-bottom: 0.35rem;
+  line-height: 1.1;
+}
+
+/* ---- Accroche ---- */
+.circuit-kicker {
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  font-weight: 300;
+}
+
+/* ---- Stats (durée, dénivelé, départ) ---- */
+.circuit-stats {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.75rem;
+  border-top: 1px solid rgba(40,65,57,0.12);
+  border-bottom: 1px solid rgba(40,65,57,0.12);
+  padding: 1rem 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0 1.25rem 0 0;
+  margin-right: 1.25rem;
+  border-right: 1px solid rgba(40,65,57,0.1);
+}
+
+.stat-item:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.stat-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wasabi);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--emerald);
+  line-height: 1.2;
+}
+
+/* ---- Description ---- */
+.circuit-desc {
+  font-size: var(--size-base);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  max-width: 50ch;
+}
+
+/* ---- Points forts ---- */
+.circuit-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.75rem;
+}
+
+.circuit-highlights li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 0.6rem;
+  font-size: var(--size-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.circuit-highlights li::before {
+  content: '—';
+  color: var(--wasabi);
+  font-size: 0.65rem;
+  font-family: var(--font-display);
+  margin-top: 0.22em;
+}
+
+/* ---- Faune observable ---- */
+.circuit-fauna-block {
+  margin-bottom: 2rem;
+}
+
+.circuit-fauna-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wasabi);
+  margin-bottom: 0.6rem;
+}
+
+.fauna-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.fauna-tag {
+  font-size: var(--size-xs);
+  font-weight: 400;
+  color: var(--emerald);
+  background: rgba(40,65,57,0.08);
+  padding: 0.25rem 0.65rem;
+  border: 1px solid rgba(40,65,57,0.15);
+  letter-spacing: 0.04em;
+  transition: all var(--transition);
+}
+
+.fauna-tag:hover {
+  background: var(--emerald);
+  color: #fff;
+  border-color: var(--emerald);
+}
+
+
+/* =========================================
+   JOURNÉE DÉCOUVERTE
+========================================= */
+.journee-section {
+  background: var(--emerald);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+}
+
+.journee-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 6vw, 7rem) clamp(2.5rem, 5vw, 5rem);
+}
+
+.journee-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wasabi);
+  margin-bottom: 1rem;
+}
+
+.journee-content h2 {
+  color: var(--khaki);
+  margin-bottom: 0.5rem;
+}
+
+.journee-kicker {
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  margin-bottom: 1.75rem;
+}
+
+.journee-desc {
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 2rem;
+  max-width: 50ch;
+}
+
+.journee-included {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.journee-included li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 0.6rem;
+  font-size: var(--size-sm);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+}
+
+.journee-included li::before {
+  content: '—';
+  color: var(--wasabi);
+  font-size: 0.65rem;
+  margin-top: 0.2em;
+}
+
+.journee-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.journee-price-amount {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--khaki);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.journee-price-label {
+  font-size: var(--size-sm);
+  color: rgba(255,255,255,0.45);
+}
+
+/* Photo Journée */
+.journee-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.journee-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.journee-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(40,65,57,0.7) 0%, transparent 40%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* =========================================
+   GALERIE FAUNE ALPINE
+========================================= */
+.faune-alpine {
+  background: var(--bg-light);
+}
+
+.faune-alpine-header {
+  max-width: 60ch;
+  margin-bottom: var(--space-xl);
+}
+
+.faune-alpine-header h2 {
+  color: var(--emerald);
+  margin-bottom: 0.75rem;
+}
+
+.faune-alpine-header p {
+  color: var(--text-secondary);
+}
+
+.faune-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.faune-card {
+  background: var(--bg-mid);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.faune-card-image {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  position: relative;
+  background: oklch(92% 0.012 148);
+}
+
+.faune-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 700ms ease;
+  display: block;
+}
+
+.faune-card:hover .faune-card-image img {
+  transform: scale(1.04);
+}
+
+/* Placeholder animal (droits en attente) */
+.faune-card-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: oklch(92% 0.012 148);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--wasabi);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px dashed rgba(128,144,118,0.35);
+  text-align: center;
+  padding: 1rem;
+}
+
+.faune-card-placeholder span:last-child {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.faune-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.faune-card-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--emerald);
+  line-height: 1.2;
+}
+
+.faune-card-habitat {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wasabi);
+  margin-bottom: 0.35rem;
+}
+
+.faune-card-desc {
+  font-size: var(--size-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   RESPONSIVE — Tablette (≤ 1024px)
+========================================= */
+@media (max-width: 1024px) {
+  .faune-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   RESPONSIVE — Tablette (≤ 900px)
+========================================= */
+@media (max-width: 900px) {
+  .circuits-page-header {
+    display: block;
+    position: relative;
+    height: 55vh;
+  }
+
+  .circuits-page-header-image {
+    position: absolute;
+    inset: 0;
+  }
+
+  .circuits-page-header-image::after {
+    background: rgba(17,26,25,0.65);
+  }
+
+  .circuits-page-header-text {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    height: 55vh;
+    min-height: 480px;
+    padding: 0 var(--gutter) 2.5rem;
+    justify-content: flex-end;
+  }
+
+  .circuits-page-header-intro { color: rgba(255,255,255,0.72); }
+
+  .circuit-row,
+  .circuit-row--reverse {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .circuit-row-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .circuit-row--reverse .circuit-row-image { order: 0; }
+  .circuit-row--reverse .circuit-row-content { order: 1; }
+
+  .journee-section {
+    grid-template-columns: 1fr;
+  }
+
+  .journee-image { display: none; }
+
+  .circuits-nav-inner { overflow-x: auto; flex-wrap: nowrap; }
+}
+
+/* =========================================
+   RESPONSIVE — Mobile (≤ 640px)
+========================================= */
+@media (max-width: 640px) {
+  .circuit-row-content {
+    padding: 2.5rem var(--gutter);
+  }
+
+  .circuit-stats {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .stat-item {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(40,65,57,0.1);
+    flex: 1 1 calc(50% - 0.25rem);
+  }
+
+  .stat-item:last-child { border-bottom: none; }
+
+  .faune-grid { grid-template-columns: 1fr 1fr; }
+
+  .journee-content {
+    padding: 3rem var(--gutter);
+  }
+}
+
+/* =========================================
+   MOUVEMENT RÉDUIT
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .circuit-row-image img,
+  .faune-card-image img {
+    transition: none;
+  }
+}

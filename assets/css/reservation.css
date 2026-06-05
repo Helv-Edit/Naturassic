@@ -1,0 +1,520 @@
+/* =========================================
+   NATURASSIC — Page Réservation
+   S'appuie sur style.css (tokens, nav, footer, boutons)
+========================================= */
+
+/* ---- BREADCRUMB (repris du pattern circuits) ---- */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--size-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 2rem;
+}
+.breadcrumb a { color: rgba(255,255,255,0.55); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--khaki); }
+.breadcrumb span { color: rgba(255,255,255,0.3); }
+
+
+/* =========================================
+   EN-TÊTE
+========================================= */
+.resa-header {
+  height: 52vh;
+  min-height: 420px;
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  overflow: hidden;
+}
+
+.resa-header-image { position: relative; overflow: hidden; }
+
+.resa-header-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(40,65,57,0.92) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.resa-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  will-change: transform;
+}
+
+.resa-header-text {
+  background: var(--emerald);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 clamp(2.5rem, 5vw, 4.5rem) clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.resa-header-text h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  margin-bottom: 0.75rem;
+}
+
+.resa-header-intro {
+  color: rgba(255,255,255,0.68);
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  font-weight: 300;
+  max-width: 40ch;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   RÉCAP DES 2 FORMULES
+========================================= */
+.resa-formules { background: var(--bg-light); }
+
+.resa-formules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  border: 1px solid rgba(40,65,57,0.12);
+}
+
+.formule {
+  padding: clamp(2rem, 3.5vw, 3rem);
+  background: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.formule--highlight { background: var(--bg-mid); }
+
+.formule-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--emerald);
+  margin-bottom: 0.3rem;
+}
+
+.formule-meta {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wasabi);
+  margin-bottom: 1.5rem;
+}
+
+.formule-included {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  flex: 1;
+}
+
+.formule-included li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 0.6rem;
+  font-size: var(--size-sm);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.formule-included li::before {
+  content: '—';
+  color: var(--wasabi);
+  font-size: 0.7rem;
+  margin-top: 0.2em;
+}
+
+.formule-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(40,65,57,0.12);
+}
+
+.formule-price-amount {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--earth);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.formule-price-label { font-size: var(--size-sm); color: var(--text-muted); }
+
+
+/* =========================================
+   ZONE DE RÉSERVATION (formulaire)
+========================================= */
+.resa-booking { background: var(--bg-mid); }
+
+.resa-booking-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.resa-form-intro { margin-bottom: 2.5rem; }
+
+.resa-form-intro h2 {
+  color: var(--emerald);
+  margin-bottom: 0.75rem;
+}
+
+.resa-form-intro p {
+  color: var(--text-secondary);
+  max-width: 52ch;
+}
+
+/* ---- Formulaire ---- */
+.resa-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1.25rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 0.45rem; }
+.field--full { grid-column: 1 / -1; }
+
+.field label {
+  font-size: var(--size-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.field .required { color: var(--cta, #8a3030); }
+
+.field-hint {
+  font-size: var(--size-xs);
+  color: var(--text-muted);
+  margin-top: -0.1rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: var(--size-base);
+  color: var(--text-primary);
+  background: var(--bg-light);
+  border: 1px solid rgba(40,65,57,0.22);
+  border-radius: var(--radius);
+  padding: 0.8rem 0.9rem;
+  width: 100%;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  min-height: 48px;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23809076' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--wasabi);
+  box-shadow: 0 0 0 3px rgba(128,144,118,0.22);
+}
+
+/* États d'erreur */
+.field input[aria-invalid="true"],
+.field select[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: #8a3030;
+  box-shadow: 0 0 0 3px rgba(138,48,48,0.12);
+}
+
+.field-error {
+  font-size: var(--size-xs);
+  color: #8a3030;
+  min-height: 1em;
+  display: none;
+}
+
+.field-error.visible { display: block; }
+
+.resa-form-submit {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.resa-form-note {
+  font-size: var(--size-xs);
+  color: var(--text-muted);
+  max-width: 32ch;
+  line-height: 1.5;
+}
+
+/* Messages de retour formulaire */
+.form-feedback {
+  grid-column: 1 / -1;
+  padding: 1rem 1.25rem;
+  font-size: var(--size-sm);
+  border-radius: var(--radius);
+  display: none;
+}
+
+.form-feedback.visible { display: block; }
+
+.form-feedback--success {
+  background: rgba(40,65,57,0.08);
+  border: 1px solid var(--wasabi);
+  color: var(--emerald);
+}
+
+.form-feedback--error {
+  background: rgba(138,48,48,0.07);
+  border: 1px solid rgba(138,48,48,0.4);
+  color: #8a3030;
+}
+
+/* ---- Aside récap / réassurance ---- */
+.resa-aside {
+  position: sticky;
+  top: 6rem;
+  background: var(--emerald);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.resa-aside h3 {
+  color: var(--khaki);
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+}
+
+.resa-aside-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.resa-aside-item { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.resa-aside-item-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: #fff;
+}
+
+.resa-aside-item-text {
+  font-size: var(--size-sm);
+  color: rgba(255,255,255,0.62);
+  line-height: 1.6;
+}
+
+/* Emplacement futur widget */
+.resa-widget-slot {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px dashed rgba(40,65,57,0.25);
+  font-size: var(--size-xs);
+  color: var(--text-muted);
+  line-height: 1.6;
+  background: rgba(40,65,57,0.02);
+}
+
+
+/* =========================================
+   COMMENT ÇA MARCHE (3 étapes — séquence réelle)
+========================================= */
+.resa-process { background: var(--noir); }
+
+.resa-process h2 {
+  color: #fff;
+  margin-bottom: var(--space-lg);
+  max-width: 18ch;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  counter-reset: step;
+}
+
+.process-step {
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--wasabi);
+}
+
+.process-step-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--khaki);
+  line-height: 1;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.process-step-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.process-step-text {
+  font-size: var(--size-sm);
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   INFOS PRATIQUES / FAQ
+========================================= */
+.resa-faq { background: var(--bg-light); }
+
+.resa-faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.resa-faq-intro h2 { color: var(--emerald); margin-bottom: 0.75rem; }
+.resa-faq-intro p  { color: var(--text-secondary); }
+
+.faq-list { display: flex; flex-direction: column; }
+
+.faq-item {
+  border-bottom: 1px solid rgba(40,65,57,0.12);
+}
+.faq-item:first-child { border-top: 1px solid rgba(40,65,57,0.12); }
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 1.25rem 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--emerald);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: color var(--transition);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--earth); }
+
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  color: var(--wasabi);
+  font-weight: 300;
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after { transform: rotate(45deg); }
+
+.faq-answer {
+  padding: 0 0 1.5rem;
+  font-size: var(--size-sm);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 60ch;
+}
+
+
+/* =========================================
+   BANDE CONTACT
+========================================= */
+.resa-contact {
+  background: var(--emerald);
+  text-align: center;
+}
+
+.resa-contact h2 { color: #fff; margin-bottom: 1rem; }
+
+.resa-contact p {
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+  margin: 0 auto 2rem;
+  max-width: 44ch;
+}
+
+.resa-contact-mail {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: var(--khaki);
+  transition: color var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.resa-contact-mail:hover {
+  color: #fff;
+  border-bottom-color: var(--khaki);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 900px) {
+  .resa-header {
+    display: block;
+    position: relative;
+    height: 48vh;
+  }
+  .resa-header-image { position: absolute; inset: 0; }
+  .resa-header-image::after { background: rgba(17,26,25,0.6); }
+  .resa-header-text {
+    position: relative; z-index: 2; background: transparent;
+    height: 48vh; min-height: 420px;
+    padding: 0 var(--gutter) 2.5rem; justify-content: flex-end;
+  }
+  .resa-header-intro { color: rgba(255,255,255,0.75); }
+
+  .resa-booking-layout { grid-template-columns: 1fr; }
+  .resa-aside { position: static; }
+  .resa-faq-layout { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  .resa-formules-grid { grid-template-columns: 1fr; }
+  .resa-form { grid-template-columns: 1fr; }
+}
+
+
+/* =========================================
+   MOUVEMENT RÉDUIT
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .resa-header-image img { will-change: auto; }
+}

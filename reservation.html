@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Réservation — Naturassic · Balades nature à Grindelwald</title>
+  <meta name="description" content="Réservez votre balade guidée dans l'Oberland bernois. Weekend Alpin ou Journée Découverte, en petit groupe. Demande en ligne, réponse sous 48 h.">
+
+  <meta property="og:title"       content="Réserver — Naturassic, Grindelwald">
+  <meta property="og:description" content="Réservez votre balade nature en petit groupe dans les Alpes suisses. Réponse sous 48 h.">
+  <meta property="og:type"        content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reservation.css">
+</head>
+<body>
+
+  <!-- ===================================================
+       NAVIGATION
+  =================================================== -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="Naturassic — Accueil">Naturassic</a>
+    <ul class="nav-links" role="list">
+      <li><a href="circuits.html">Circuits</a></li>
+      <li><a href="reservation.html" aria-current="page">Réservation</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ===================================================
+       EN-TÊTE
+  =================================================== -->
+  <section class="resa-header" aria-labelledby="resa-title">
+
+    <div class="resa-header-image">
+      <!-- Note : "iamge 9.jpg" — faute de frappe dans le nom de fichier client -->
+      <img
+        src="Dossier%20images%20client%20nature%20claude/iamge%209.jpg"
+        alt="Terrasse en bois d'un chalet alpin surplombant une vallée de l'Oberland bernois"
+        loading="eager"
+        fetchpriority="high"
+        width="1200"
+        height="2133"
+      >
+    </div>
+
+    <div class="resa-header-text">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Réservation</span>
+      </nav>
+      <h1 id="resa-title">Réserver</h1>
+      <p class="resa-header-intro">
+        Une demande, pas un paiement immédiat. Vous nous dites ce qui vous
+        intéresse, nous confirmons les disponibilités sous 48 heures.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       RÉCAP DES 2 FORMULES
+  =================================================== -->
+  <section class="resa-formules" aria-labelledby="formules-title">
+    <div class="section-inner">
+
+      <h2 id="formules-title" class="visually-hidden">Nos deux formules</h2>
+
+      <div class="resa-formules-grid">
+
+        <div class="formule formule--highlight">
+          <p class="formule-name">Weekend Alpin</p>
+          <p class="formule-meta">2 jours · 1 nuit · Groupes de 4 à 6</p>
+          <ul class="formule-included" role="list">
+            <li>Guide naturaliste certifié</li>
+            <li>Nuit en village à Grindelwald</li>
+            <li>Repas de montagne</li>
+            <li>Équipement de marche fourni</li>
+            <li>Au choix parmi les 4 circuits</li>
+          </ul>
+          <div class="formule-price">
+            <span class="formule-price-amount">450 CHF</span>
+            <span class="formule-price-label">/ personne, tout inclus</span>
+          </div>
+        </div>
+
+        <div class="formule">
+          <p class="formule-name">Journée Découverte</p>
+          <p class="formule-meta">Du lever au coucher du soleil · 8 max</p>
+          <ul class="formule-included" role="list">
+            <li>Guide naturaliste toute la journée</li>
+            <li>Déjeuner en refuge inclus</li>
+            <li>Équipement de marche fourni</li>
+            <li>Circuit au choix selon la saison</li>
+          </ul>
+          <div class="formule-price">
+            <span class="formule-price-amount">150 CHF</span>
+            <span class="formule-price-label">/ personne</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       ZONE DE RÉSERVATION — Formulaire de demande
+  =================================================== -->
+  <section class="resa-booking" aria-labelledby="booking-title">
+    <div class="section-inner">
+      <div class="resa-booking-layout">
+
+        <!-- Colonne formulaire -->
+        <div class="resa-form-col">
+
+          <div class="resa-form-intro reveal">
+            <h2 id="booking-title">Votre demande</h2>
+            <p>
+              Remplissez ce formulaire : nous revenons vers vous sous 48 heures
+              avec les disponibilités et les modalités d'acompte. Aucun paiement
+              n'est demandé à cette étape.
+            </p>
+          </div>
+
+          <!--
+            FORMULAIRE — Netlify Forms (natif, zéro backend).
+            Pour basculer sur Vercel/Formspree :
+              - retirer data-netlify et netlify-honeypot
+              - ajouter action="https://formspree.io/f/VOTRE_ID" method="POST"
+              - retirer le fetch('/') dans reservation.js (laisser le submit natif)
+          -->
+          <form
+            id="resa-form"
+            name="reservation"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="resa-form"
+            novalidate
+          >
+            <!-- Champs techniques Netlify -->
+            <input type="hidden" name="form-name" value="reservation">
+            <p class="visually-hidden" aria-hidden="true">
+              <label>Ne pas remplir : <input name="bot-field"></label>
+            </p>
+
+            <div class="field">
+              <label for="nom">Nom complet <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="nom" name="nom" required autocomplete="name">
+              <span class="field-error" id="nom-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <span class="field-error" id="email-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+              <span class="field-error" id="telephone-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="formule">Formule <span class="required" aria-hidden="true">*</span></label>
+              <select id="formule" name="formule" required>
+                <option value="" disabled selected>Choisir une formule</option>
+                <option value="weekend">Weekend Alpin — 450 CHF</option>
+                <option value="journee">Journée Découverte — 150 CHF</option>
+              </select>
+              <span class="field-error" id="formule-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="circuit">Circuit souhaité <span class="required" aria-hidden="true">*</span></label>
+              <select id="circuit" name="circuit" required>
+                <option value="" disabled selected>Choisir un circuit</option>
+                <option value="sentier-sources">Sentier des Sources — Facile</option>
+                <option value="crete-chamois">Crête des Chamois — Moyen</option>
+                <option value="lac-glaciaire">Lac Glaciaire — Moyen</option>
+                <option value="sommet-silence">Sommet du Silence — Difficile</option>
+                <option value="indecis">Je ne sais pas encore</option>
+              </select>
+              <span class="field-error" id="circuit-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="date">Date souhaitée <span class="required" aria-hidden="true">*</span></label>
+              <input type="date" id="date" name="date" required>
+              <span class="field-error" id="date-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="personnes">Nombre de personnes <span class="required" aria-hidden="true">*</span></label>
+              <input type="number" id="personnes" name="personnes" min="1" max="8" value="2" required>
+              <span class="field-hint" id="personnes-hint"></span>
+              <span class="field-error" id="personnes-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field field--full">
+              <label for="message">Message (optionnel)</label>
+              <textarea id="message" name="message" rows="4" placeholder="Niveau du groupe, dates flexibles, questions…"></textarea>
+              <span class="field-error" id="message-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Messages de retour -->
+            <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
+
+            <div class="resa-form-submit">
+              <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+              <p class="resa-form-note">
+                Réponse sous 48 h. Acompte demandé seulement après confirmation
+                de disponibilité.
+              </p>
+            </div>
+
+            <!-- Emplacement pour un futur widget de réservation -->
+            <div class="resa-widget-slot">
+              Emplacement réservé : un widget de réservation (plateforme d'activités)
+              pourra remplacer ce formulaire ici, sans toucher au reste de la page.
+            </div>
+
+          </form>
+
+        </div>
+
+        <!-- Colonne aside réassurance -->
+        <aside class="resa-aside reveal" aria-label="Bon à savoir">
+          <h3>Bon à savoir</h3>
+          <ul class="resa-aside-list" role="list">
+            <li class="resa-aside-item">
+              <span class="resa-aside-item-title">Petits groupes garantis</span>
+              <span class="resa-aside-item-text">
+                4 à 6 personnes le weekend, 8 maximum à la journée. Toujours.
+              </span>
+            </li>
+            <li class="resa-aside-item">
+              <span class="resa-aside-item-title">Aucun paiement maintenant</span>
+              <span class="resa-aside-item-text">
+                Vous réglez un acompte une fois la date confirmée. Le solde
+                se paie avant le départ.
+              </span>
+            </li>
+            <li class="resa-aside-item">
+              <span class="resa-aside-item-title">Réponse rapide</span>
+              <span class="resa-aside-item-text">
+                Un guide vous répond personnellement sous 48 heures.
+              </span>
+            </li>
+            <li class="resa-aside-item">
+              <span class="resa-aside-item-title">Une question d'abord ?</span>
+              <span class="resa-aside-item-text">
+                Écrivez-nous à contact@naturassic.ch, on prend le temps de
+                vous répondre.
+              </span>
+            </li>
+          </ul>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       COMMENT ÇA MARCHE — 3 étapes
+  =================================================== -->
+  <section class="resa-process" aria-labelledby="process-title">
+    <div class="section-inner">
+
+      <h2 id="process-title" class="reveal">De la demande au départ</h2>
+
+      <ol class="process-steps" role="list">
+        <li class="process-step">
+          <span class="process-step-num" aria-hidden="true">1</span>
+          <h3 class="process-step-title">Vous demandez</h3>
+          <p class="process-step-text">
+            Vous choisissez une formule, un circuit et une date. On vérifie
+            les disponibilités et la taille du groupe.
+          </p>
+        </li>
+        <li class="process-step">
+          <span class="process-step-num" aria-hidden="true">2</span>
+          <h3 class="process-step-title">Vous versez l'acompte</h3>
+          <p class="process-step-text">
+            Une fois la date confirmée, un acompte réserve votre place. Vous
+            recevez une confirmation par email, en français et en anglais.
+          </p>
+        </li>
+        <li class="process-step">
+          <span class="process-step-num" aria-hidden="true">3</span>
+          <h3 class="process-step-title">Vous partez</h3>
+          <p class="process-step-text">
+            Le solde se règle avant le départ. Le jour J, votre guide vous
+            attend à Grindelwald. Le reste, c'est la montagne.
+          </p>
+        </li>
+      </ol>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       INFOS PRATIQUES / FAQ
+  =================================================== -->
+  <section class="resa-faq" aria-labelledby="faq-title">
+    <div class="section-inner">
+      <div class="resa-faq-layout">
+
+        <div class="resa-faq-intro reveal">
+          <h2 id="faq-title">Infos pratiques</h2>
+          <p>
+            Les questions qu'on nous pose le plus souvent avant de réserver.
+            Une autre en tête ? Écrivez-nous.
+          </p>
+        </div>
+
+        <div class="faq-list reveal">
+
+          <details class="faq-item">
+            <summary>Quel niveau faut-il pour participer ?</summary>
+            <div class="faq-answer">
+              Cela dépend du circuit. Le Sentier des Sources est accessible à
+              tous, même aux enfants à partir de 10 ans. Le Sommet du Silence
+              demande une bonne condition physique et de l'expérience en
+              montagne. Chaque circuit indique son niveau ; en cas de doute,
+              demandez-nous.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Que dois-je emporter ?</summary>
+            <div class="faq-answer">
+              De bonnes chaussures de marche, une veste imperméable, de l'eau
+              et de la crème solaire. Le reste de l'équipement technique
+              (bâtons, sac, matériel d'observation) est fourni. Une liste
+              détaillée vous est envoyée après confirmation.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Comment fonctionne le paiement ?</summary>
+            <div class="faq-answer">
+              Aucun paiement à la demande. Une fois votre date confirmée, vous
+              versez un acompte pour réserver votre place. Le solde se règle
+              avant le départ. Les modalités exactes vous sont communiquées
+              dans l'email de confirmation.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Puis-je annuler ?</summary>
+            <div class="faq-answer">
+              Oui. L'acompte est remboursable jusqu'à un certain délai avant le
+              départ, précisé lors de la confirmation. En cas de météo
+              dangereuse, nous reportons ou remboursons intégralement : la
+              sécurité prime.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Où se retrouve-t-on ?</summary>
+            <div class="faq-answer">
+              Le point de rendez-vous est à Grindelwald, communiqué précisément
+              dans votre confirmation. Tous nos circuits partent et reviennent
+              à pied depuis le village : aucun véhicule motorisé.
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       BANDE CONTACT
+  =================================================== -->
+  <section class="resa-contact" aria-labelledby="contact-title">
+    <div class="section-inner">
+      <h2 id="contact-title" class="reveal">Une question avant de réserver ?</h2>
+      <p class="reveal">
+        On préfère une vraie conversation à un formulaire. Écrivez-nous,
+        un guide vous répond.
+      </p>
+      <!-- TODO: remplacer par le vrai email du client -->
+      <a href="mailto:contact@naturassic.ch" class="resa-contact-mail reveal">
+        contact@naturassic.ch
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       FOOTER
+  =================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <p class="footer-brand">Naturassic</p>
+
+      <nav aria-label="Navigation pied de page">
+        <ul class="footer-links" role="list">
+          <li><a href="circuits.html">Circuits</a></li>
+          <li><a href="reservation.html" aria-current="page">Réservation</a></li>
+          <li><a href="mailto:contact@naturassic.ch">Contact</a></li>
+        </ul>
+      </nav>
+
+      <p class="footer-meta">
+        Grindelwald, Oberland bernois<br>
+        <a href="#">Mentions légales</a>&ensp;&middot;&ensp;<span>&copy;&nbsp;2026 Naturassic</span>
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/reservation.js"></script>
+
+</body>
+</html>

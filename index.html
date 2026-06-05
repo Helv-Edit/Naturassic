@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Naturassic — Balades nature guidées à Grindelwald</title>
+  <meta name="description" content="Découvrez la faune alpine de l'Oberland bernois avec des guides naturalistes locaux. Circuits en petit groupe, tout inclus. Grindelwald, Alpes suisses.">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Naturassic — Balades nature à Grindelwald">
+  <meta property="og:description" content="Balades guidées en petit groupe dans l'Oberland bernois. Chamois, bouquetins, marmottes — la faune alpine avec des guides locaux.">
+  <meta property="og:type"        content="website">
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristGuideAgency",
+    "name": "Naturassic",
+    "description": "Agence de balades nature guidées en petit groupe dans l'Oberland bernois.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Grindelwald",
+      "addressRegion": "Berne",
+      "addressCountry": "CH"
+    },
+    "priceRange": "CHF 150–450"
+  }
+  </script>
+
+  <!-- Fonts Google : Gloock (display) + Jost (corps) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gloock&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===================================================
+       NAVIGATION
+  =================================================== -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="Naturassic — Accueil">
+      Naturassic
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="circuits.html">Circuits</a></li>
+      <li><a href="reservation.html">Réservation</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ===================================================
+       HERO — Split éditorial : Eiger HD | texte emerald
+       Image : Markus Spiske, Grindelwald — Unsplash License (libre commercial)
+  =================================================== -->
+  <section class="hero" id="accueil" aria-labelledby="hero-title">
+
+    <!-- Panneau gauche — photo HD paysage -->
+    <div class="hero-image-panel">
+      <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1516774935807-3f60068700d3?auto=format&fit=crop&w=2400&q=85"
+        alt="L'Eiger depuis les alpages de Grindelwald, sommet enneigé sous ciel bleu, Oberland bernois"
+        loading="eager"
+        fetchpriority="high"
+        width="2400"
+        height="1600"
+      >
+    </div>
+
+    <!-- Panneau droit — fond emerald + contenu -->
+    <div class="hero-text-panel">
+      <small class="hero-tag">Grindelwald · Oberland bernois · Alpes suisses</small>
+      <h1 id="hero-title">Le temps<br>de voir.</h1>
+      <p class="hero-sub">
+        Balades guidées en petit groupe,<br>
+        au contact de la faune alpine.
+      </p>
+      <a href="circuits.html" class="btn btn-primary">
+        Découvrir les circuits
+      </a>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       PROPOSITIONS — Ce qui distingue Naturassic
+  =================================================== -->
+  <section class="propositions" aria-labelledby="propositions-title">
+    <div class="section-inner">
+
+      <h2 id="propositions-title" class="visually-hidden">Ce qui distingue Naturassic</h2>
+
+      <ul class="propositions-list" role="list">
+
+        <li class="proposition-item">
+          <span class="proposition-label">Petits groupes</span>
+          <p class="proposition-text">
+            De 4 à 6 participants par circuit. Chaque balade reste une expérience intime,
+            menée à votre rythme — pas celui d'un groupe de trente personnes.
+          </p>
+        </li>
+
+        <li class="proposition-item">
+          <span class="proposition-label">Guides locaux</span>
+          <p class="proposition-text">
+            Trois naturalistes de Grindelwald. Ils savent où les chamois passent le matin,
+            et pourquoi le glacier recule d'année en année.
+          </p>
+        </li>
+
+        <li class="proposition-item">
+          <span class="proposition-label">Tout inclus</span>
+          <p class="proposition-text">
+            Guide, hébergement à Grindelwald, repas de montagne, équipement.
+            Vous arrivez avec vos chaussures — on s'occupe du reste.
+          </p>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       CIRCUITS — Aperçu des 4 itinéraires
+  =================================================== -->
+  <section class="section-dark circuits" id="circuits" aria-labelledby="circuits-title">
+    <div class="section-inner">
+
+      <div class="circuits-header">
+        <div>
+          <p class="circuits-eyebrow">Weekend alpin · Journée découverte</p>
+          <h2 id="circuits-title">Quatre itinéraires<br>dans l'Oberland</h2>
+        </div>
+        <a href="circuits.html" class="btn btn-outline-light">
+          Voir les détails &rarr;
+        </a>
+      </div>
+
+      <!-- Body circuits : sidebar inclus + grille -->
+      <div class="circuits-body">
+
+      <!-- Sidebar gauche : ce qui est inclus -->
+      <div class="circuits-sidebar">
+
+        <div class="sidebar-offer">
+          <p class="sidebar-offer-title">Weekend Alpin</p>
+          <p class="sidebar-offer-price">2 jours · 1 nuit · Groupes de 4 à 6</p>
+          <ul class="sidebar-included" role="list">
+            <li>Guide naturaliste certifié</li>
+            <li>Nuit en village à Grindelwald</li>
+            <li>Repas de montagne</li>
+            <li>Équipement de marche</li>
+          </ul>
+          <div class="sidebar-price">
+            <span class="sidebar-price-amount">450 CHF</span>
+            <span class="sidebar-price-label">/ personne</span>
+          </div>
+        </div>
+
+        <div class="sidebar-offer">
+          <p class="sidebar-offer-title">Journée Découverte</p>
+          <p class="sidebar-offer-price">Du lever au coucher du soleil · 8 max</p>
+          <ul class="sidebar-included" role="list">
+            <li>Guide naturaliste toute la journée</li>
+            <li>Déjeuner inclus</li>
+          </ul>
+          <div class="sidebar-price">
+            <span class="sidebar-price-amount">150 CHF</span>
+            <span class="sidebar-price-label">/ personne</span>
+          </div>
+        </div>
+
+        <a href="reservation.html" class="btn btn-primary sidebar-cta">Réserver</a>
+
+      </div><!-- /.circuits-sidebar -->
+
+      <div class="circuits-grid" role="list">
+
+        <a
+          href="circuits.html#sentier-sources"
+          class="circuit-card"
+          role="listitem"
+          aria-label="Sentier des Sources, niveau Facile"
+        >
+          <img
+            src="Dossier%20images%20client%20nature%20claude/image%2012.jpg"
+            alt="Cascade blanche dans un vallon alpestre, prairie verte et chalets de bois au pied des rochers"
+            loading="lazy"
+            width="736"
+            height="1308"
+          >
+          <div class="circuit-overlay" aria-hidden="true">
+            <span class="circuit-level">Facile</span>
+            <h3 class="circuit-name">Sentier des Sources</h3>
+            <p class="circuit-desc">Prairies · Cascades · Faune accessible</p>
+          </div>
+        </a>
+
+        <a
+          href="circuits.html#crete-chamois"
+          class="circuit-card"
+          role="listitem"
+          aria-label="Crête des Chamois, niveau Moyen"
+        >
+          <img
+            src="Dossier%20images%20client%20nature%20claude/image%206.jpg"
+            alt="File de randonneurs chargés de sacs à dos sur un sentier forestier alpin entre épicéas"
+            loading="lazy"
+            width="1200"
+            height="1807"
+          >
+          <div class="circuit-overlay" aria-hidden="true">
+            <span class="circuit-level moyen">Moyen</span>
+            <h3 class="circuit-name">Crête des Chamois</h3>
+            <p class="circuit-desc">Vues panoramiques · Observation chamois</p>
+          </div>
+        </a>
+
+        <a
+          href="circuits.html#lac-glaciaire"
+          class="circuit-card"
+          role="listitem"
+          aria-label="Lac Glaciaire, niveau Moyen"
+        >
+          <img
+            src="Dossier%20images%20client%20nature%20claude/image%208.jpg"
+            alt="Lac de montagne aux eaux turquoise entouré de parois rocheuses et de mélèzes, Alpes suisses"
+            loading="lazy"
+            width="736"
+            height="1308"
+          >
+          <div class="circuit-overlay" aria-hidden="true">
+            <span class="circuit-level moyen">Moyen</span>
+            <h3 class="circuit-name">Lac Glaciaire</h3>
+            <p class="circuit-desc">Trek d'altitude · Marmottes · Aigles</p>
+          </div>
+        </a>
+
+        <a
+          href="circuits.html#sommet-silence"
+          class="circuit-card"
+          role="listitem"
+          aria-label="Sommet du Silence, niveau Difficile"
+        >
+          <img
+            src="Dossier%20images%20client%20nature%20claude/image%2011.jpg"
+            alt="Village alpin au coucher de soleil, ciel embrasé orange-rouge sur les sommets enneigés"
+            loading="lazy"
+            width="736"
+            height="981"
+          >
+          <div class="circuit-overlay" aria-hidden="true">
+            <span class="circuit-level difficile">Difficile</span>
+            <h3 class="circuit-name">Sommet du Silence</h3>
+            <p class="circuit-desc">Haute montagne · Faune rare · Coucher de soleil</p>
+          </div>
+        </a>
+
+      </div><!-- /.circuits-grid -->
+
+      </div><!-- /.circuits-body -->
+
+      <div class="circuits-pricing reveal">
+        <div class="pricing-block">
+          <span class="pricing-amount">450 CHF</span>
+          <span class="pricing-label">Weekend alpin — 2 jours / 1 nuit, tout inclus</span>
+          <span class="pricing-note">Groupes de 4 à 6 personnes</span>
+        </div>
+        <div class="pricing-block">
+          <span class="pricing-amount">150 CHF</span>
+          <span class="pricing-label">Journée Découverte — du lever au coucher du soleil</span>
+          <span class="pricing-note">Groupes de 8 personnes maximum</span>
+        </div>
+        <a href="reservation.html" class="btn btn-primary">Réserver</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       FAUNE — Aperçu des animaux observables
+  =================================================== -->
+  <section class="fauna" aria-labelledby="fauna-title">
+    <div class="section-inner">
+
+      <div class="fauna-header reveal">
+        <h2 id="fauna-title">Ce que vous pourrez observer</h2>
+        <p>
+          Chamois, bouquetins, marmottes, renards — la faune de l'Oberland bernois
+          est présente si on sait où regarder. L'apercevoir demande du silence
+          et de la patience. C'est là qu'interviennent nos guides.
+        </p>
+      </div>
+
+      <div class="fauna-photos" role="list">
+
+        <!-- Bouquetin — HD, droits OK -->
+        <div class="fauna-item" role="listitem">
+          <div class="fauna-photo">
+            <img
+              src="Dossier%20images%20client%20nature%20claude/2.jpg"
+              alt="Bouquetin des Alpes sur des rochers en altitude, vallée alpine et ciel bleu en arrière-plan"
+              loading="lazy"
+              width="1200"
+              height="1800"
+            >
+          </div>
+          <span class="fauna-animal-name">Bouquetin des Alpes</span>
+        </div>
+
+        <!-- Marmotte — 13.jpg, Alpes, pas de watermark visible -->
+        <div class="fauna-item" role="listitem">
+          <div class="fauna-photo">
+            <img
+              src="Dossier%20images%20client%20nature%20claude/13.jpg"
+              alt="Marmotte alpine debout sur un rocher, glacier et sommet enneigé en arrière-plan"
+              loading="lazy"
+              width="600"
+              height="900"
+            >
+          </div>
+          <span class="fauna-animal-name">Marmotte alpine</span>
+        </div>
+
+        <!-- Renard roux — propre -->
+        <div class="fauna-item" role="listitem">
+          <div class="fauna-photo">
+            <img
+              src="Dossier%20images%20client%20nature%20claude/6.jpg"
+              alt="Renard roux allongé dans l'herbe d'un alpage, pelage roux et blanc"
+              loading="lazy"
+              width="736"
+              height="981"
+            >
+          </div>
+          <span class="fauna-animal-name">Renard roux</span>
+        </div>
+
+        <!-- Chamois — photo en attente de validation droits -->
+        <!-- TODO: photo chamois (1.jpg) — confirmer droits commerciaux avant usage -->
+        <div class="fauna-item" role="listitem">
+          <div class="fauna-placeholder" aria-label="Photo de chamois — en cours">
+            <span>Photo à venir</span>
+            <span>Chamois des Alpes</span>
+          </div>
+          <span class="fauna-animal-name">Chamois</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       ÉQUIPE — Les trois guides
+  =================================================== -->
+  <section class="team" aria-labelledby="team-title">
+    <div class="section-inner">
+      <div class="team-layout">
+
+        <!-- Photo équipe — droits à confirmer avant mise en ligne -->
+        <!-- TODO: 4ff553... — confirmer droits commerciaux ou remplacer par vrai portrait -->
+        <div class="team-photo-wrap reveal">
+          <img
+            src="Dossier%20images%20client%20nature%20claude/4ff553a025b2c286411e362a2a2c534b.jpg"
+            alt="Guide naturaliste accompagnant un groupe dans un passage rocheux en forêt alpine"
+            loading="lazy"
+            width="735"
+            height="971"
+          >
+        </div>
+
+        <div class="team-content">
+
+          <div class="reveal">
+            <h2 id="team-title">Trois guides,<br>une montagne</h2>
+            <p class="team-intro-text">
+              Tous trois grindelwaldiens, tous trois certifiés. Ils ne vous emmèneront pas
+              vers les points de vue balisés — ils vous emmèneront là où ils vont eux-mêmes.
+            </p>
+          </div>
+
+          <!-- ⚠️ PLACEHOLDER — remplacer par les vrais noms, certifications et citations des guides -->
+          <ul class="guides-list" role="list">
+
+            <li class="guide-item" role="listitem">
+              <p class="guide-name">Markus Stettler</p>
+              <p class="guide-role">Guide UIMLA · Naturaliste</p>
+              <blockquote class="guide-quote">
+                "En vingt ans, j'ai vu le glacier Inférieur de Grindelwald reculer de plusieurs
+                centaines de mètres. Chaque sortie me rappelle pourquoi ce travail compte."
+              </blockquote>
+            </li>
+
+            <li class="guide-item" role="listitem">
+              <p class="guide-name">Elena Vogel</p>
+              <p class="guide-role">Naturaliste FINAT · Guide certifiée</p>
+              <blockquote class="guide-quote">
+                "Les marmottes ont changé leurs habitudes d'hibernation ces dernières années.
+                Sur le terrain, ça se voit. C'est ce qu'on ne lit pas dans les brochures."
+              </blockquote>
+            </li>
+
+            <li class="guide-item" role="listitem">
+              <p class="guide-name">Jonas Baumgartner</p>
+              <p class="guide-role">Guide UIMLA · Spécialiste faune alpine</p>
+              <blockquote class="guide-quote">
+                "Grindelwald, c'est chez nous. On ne vous emmène pas là où vont les
+                groupes de touristes — on vous emmène là où on va nous-mêmes."
+              </blockquote>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       ÉCO-ENGAGEMENT
+  =================================================== -->
+  <section class="section-dark eco" aria-labelledby="eco-title">
+    <div class="section-inner">
+      <div class="eco-layout">
+
+        <div class="eco-content">
+          <h2 id="eco-title" class="reveal">Ce que<br>la montagne dit</h2>
+
+          <ul class="eco-points" role="list">
+
+            <li class="eco-point" role="listitem">
+              <div class="eco-marker" aria-hidden="true"></div>
+              <div>
+                <p class="eco-point-title">Les glaciers reculent</p>
+                <p class="eco-point-text">
+                  Le glacier Inférieur de Grindelwald a perdu plus de 2,5 km depuis 1900.
+                  Sur nos circuits, vous en verrez les traces directement.
+                  Ce n'est pas une métaphore.
+                </p>
+              </div>
+            </li>
+
+            <li class="eco-point" role="listitem">
+              <div class="eco-marker" aria-hidden="true"></div>
+              <div>
+                <p class="eco-point-title">Des sentiers peu fréquentés</p>
+                <p class="eco-point-text">
+                  Nos circuits évitent les voies saturées. Moins de passage,
+                  plus de contact avec la faune. Les chamois ne se montrent pas
+                  aux groupes bruyants.
+                </p>
+              </div>
+            </li>
+
+            <li class="eco-point" role="listitem">
+              <div class="eco-marker" aria-hidden="true"></div>
+              <div>
+                <p class="eco-point-title">Aucun véhicule motorisé</p>
+                <p class="eco-point-text">
+                  Départ et retour à pied depuis le village.
+                  L'accès lent fait partie de l'expérience — et de la démarche.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="eco-photo reveal">
+          <!-- Note : "iamge 9.jpg" — faute de frappe dans le nom de fichier client -->
+          <img
+            src="Dossier%20images%20client%20nature%20claude/iamge%209.jpg"
+            alt="Terrasse en bois d'un chalet alpin avec vue panoramique sur la vallée et les sommets"
+            loading="lazy"
+            width="1200"
+            height="2133"
+          >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       CTA FINAL — Réservation
+  =================================================== -->
+  <section class="cta-section" aria-labelledby="cta-title">
+
+    <!-- Image : lucas wesney, Grindelwald/Eiger — Unsplash License (libre commercial) -->
+    <img
+      class="cta-bg"
+      src="https://images.unsplash.com/photo-1533850595620-7b1711221751?auto=format&fit=crop&w=2400&q=85"
+      alt="Randonneuse face au panorama de la vallée de Grindelwald et des sommets enneigés de l'Oberland bernois"
+      loading="lazy"
+      width="2400"
+      height="1600"
+    >
+    <div class="cta-overlay" aria-hidden="true"></div>
+
+    <div class="section-inner">
+      <div class="cta-content">
+
+        <h2 id="cta-title" class="reveal">Prêt pour<br>l'Oberland ?</h2>
+        <p class="cta-sub reveal">
+          Choisissez votre circuit, votre date, votre groupe.
+          Nous nous occupons du reste.
+        </p>
+
+        <div class="cta-prices reveal" aria-label="Tarifs">
+          <div class="cta-price">
+            <span class="cta-price-amount">450 CHF</span>
+            <span class="cta-price-label">le weekend</span>
+          </div>
+          <div class="cta-price">
+            <span class="cta-price-amount">150 CHF</span>
+            <span class="cta-price-label">la journée</span>
+          </div>
+        </div>
+
+        <a href="reservation.html" class="btn btn-primary reveal">
+          Réserver une balade
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       FOOTER
+  =================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <p class="footer-brand">Naturassic</p>
+
+      <nav aria-label="Navigation pied de page">
+        <ul class="footer-links" role="list">
+          <li><a href="circuits.html">Circuits</a></li>
+          <li><a href="reservation.html">Réservation</a></li>
+          <!-- TODO: remplacer par le vrai email du client -->
+          <li><a href="mailto:contact@naturassic.ch">Contact</a></li>
+        </ul>
+      </nav>
+
+      <p class="footer-meta">
+        Grindelwald, Oberland bernois<br>
+        <a href="#">Mentions légales</a>&ensp;&middot;&ensp;<span>&copy;&nbsp;2026 Naturassic</span>
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- Scripts — chargés après le DOM -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
