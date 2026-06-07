@@ -182,14 +182,16 @@ p {
   overflow: hidden;
 }
 
-/* Fondu droit vers l'emerald pour liaison douce entre les deux panneaux */
+/* Coupe nette éditoriale : filet khaki au raccord photo / panneau emerald
+   (remplace l'ancien fondu vert qui salissait l'image) */
 .hero-image-panel::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, transparent 65%, rgba(40,65,57,0.9) 100%);
+  top: 0; bottom: 0; right: 0;
+  width: 2px;
+  background: var(--khaki);
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-image {
@@ -278,6 +280,8 @@ p {
   }
 
   .hero-image-panel::after {
+    inset: 0;
+    width: auto;
     background: rgba(17,26,25,0.62);
   }
 
@@ -829,6 +833,85 @@ p {
 
 
 /* =========================================
+   BLOC A — QUI VOUS GUIDE (fusion propositions + guides)
+========================================= */
+.guides-section { background: var(--bg-light); }
+
+.guides-intro {
+  max-width: 60ch;
+  margin-bottom: var(--space-xl);
+}
+.guides-intro h2 { color: var(--emerald); margin-bottom: 1rem; }
+.guides-intro p  { color: var(--text-secondary); }
+
+/* Bandeau propositions en 3 colonnes — plus dense que la liste verticale */
+.propositions-list--compact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  border-top: none;
+  margin-bottom: var(--space-xl);
+}
+
+.propositions-list--compact .proposition-item {
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  padding: clamp(1.75rem, 2.5vw, 2.25rem);
+  background: var(--bg-mid);
+  border-bottom: none;
+}
+
+.propositions-list--compact .proposition-label { padding-top: 0; }
+
+/* Phrase d'accroche au-dessus de la liste des guides */
+.team-lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--emerald);
+  line-height: 1.4;
+  max-width: 34ch;
+  margin-bottom: var(--space-md);
+}
+
+
+/* =========================================
+   BLOC B — CE QUE LA MONTAGNE DIT (fusion éco + faune)
+========================================= */
+.mountain-intro {
+  max-width: 60ch;
+  margin-bottom: var(--space-xl);
+}
+.mountain-intro h2 { margin-bottom: 1rem; }
+
+/* Constats de terrain en 3 colonnes */
+.eco-points--row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--space-xl);
+}
+
+/* Faune dans le bloc sombre */
+.mountain-fauna {
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.mountain-fauna-head {
+  max-width: 56ch;
+  margin-bottom: var(--space-lg);
+}
+
+.mountain-fauna-head h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 0.75rem;
+}
+
+.mountain-section .fauna-animal-name { color: rgba(255,255,255,0.72); }
+.mountain-section .fauna-photo { background: rgba(255,255,255,0.06); }
+
+
+/* =========================================
    SECTION 7 — CTA FINAL
 ========================================= */
 .cta-section {
@@ -993,6 +1076,10 @@ p {
     grid-template-columns: 180px 1fr;
   }
 
+  .propositions-list--compact { grid-template-columns: 1fr 1fr; }
+
+  .eco-points--row { grid-template-columns: 1fr; gap: 1.75rem; }
+
   .circuits-pricing {
     flex-direction: column;
     align-items: flex-start;
@@ -1013,6 +1100,8 @@ p {
     grid-template-columns: 1fr;
     gap: 0.4rem;
   }
+
+  .propositions-list--compact { grid-template-columns: 1fr; }
 
   .footer-inner {
     grid-template-columns: 1fr;

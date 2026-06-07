@@ -82,107 +82,107 @@
     });
 
     /* -- Propositions : révélation séquentielle -- */
-    gsap.set('.proposition-item', { opacity: 0, y: 20 });
+    gsap.set('.proposition-item', { opacity: 0, y: 16 });
 
     gsap.utils.toArray('.proposition-item').forEach((item, i) => {
       gsap.to(item, {
         opacity: 1,
         y: 0,
-        duration: 0.85,
-        ease: 'power2.out',
-        delay: i * 0.12,
+        duration: 0.55,
+        ease: 'power3.out',
+        delay: i * 0.05,
         scrollTrigger: {
-          trigger: item,
-          start: 'top 82%',
+          trigger: '.propositions-list',
+          start: 'top 88%',
           once: true,
         },
       });
     });
 
     /* -- Circuits : révélation par carte -- */
-    gsap.set('.circuit-card', { opacity: 0, y: 24 });
+    gsap.set('.circuit-card', { opacity: 0, y: 18 });
 
     gsap.utils.toArray('.circuit-card').forEach((card, i) => {
       gsap.to(card, {
         opacity: 1,
         y: 0,
-        duration: 0.9,
-        ease: 'power2.out',
-        delay: i * 0.1,
+        duration: 0.55,
+        ease: 'power3.out',
+        delay: i * 0.05,
         scrollTrigger: {
           trigger: '.circuits-grid',
-          start: 'top 82%',
+          start: 'top 88%',
           once: true,
         },
       });
     });
 
     /* -- Faune : révélation avec légère échelle -- */
-    gsap.set('.fauna-item', { opacity: 0, y: 20 });
+    gsap.set('.fauna-item', { opacity: 0, y: 16 });
 
     gsap.utils.toArray('.fauna-item').forEach((item, i) => {
       gsap.to(item, {
         opacity: 1,
         y: 0,
-        duration: 0.85,
-        ease: 'power2.out',
-        delay: i * 0.08,
+        duration: 0.55,
+        ease: 'power3.out',
+        delay: i * 0.05,
         scrollTrigger: {
           trigger: '.fauna-photos',
-          start: 'top 84%',
+          start: 'top 88%',
           once: true,
         },
       });
     });
 
     /* -- Révélations génériques .reveal -- */
-    gsap.set('.reveal', { opacity: 0, y: 20 });
+    gsap.set('.reveal', { opacity: 0, y: 16 });
 
     gsap.utils.toArray('.reveal').forEach((el) => {
       gsap.to(el, {
         opacity: 1,
         y: 0,
-        duration: 0.9,
-        ease: 'power2.out',
+        duration: 0.55,
+        ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
-          start: 'top 80%',
+          start: 'top 88%',
           once: true,
         },
       });
     });
 
     /* -- Guides : entrée décalée -- */
-    gsap.set('.guide-item', { opacity: 0, x: -16 });
+    gsap.set('.guide-item', { opacity: 0, x: -14 });
 
     gsap.utils.toArray('.guide-item').forEach((item, i) => {
       gsap.to(item, {
         opacity: 1,
         x: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-        delay: i * 0.12,
+        duration: 0.55,
+        ease: 'power3.out',
+        delay: i * 0.05,
         scrollTrigger: {
           trigger: '.guides-list',
-          start: 'top 80%',
+          start: 'top 88%',
           once: true,
         },
       });
     });
 
     /* -- Éco-points -- */
-    gsap.set('.eco-point', { opacity: 0, y: 16 });
+    gsap.set('.eco-point', { opacity: 0, y: 14 });
 
     gsap.utils.toArray('.eco-point').forEach((point, i) => {
       gsap.to(point, {
         opacity: 1,
         y: 0,
-        duration: 0.85,
-        ease: 'power2.out',
-        delay: i * 0.15,
+        duration: 0.55,
+        ease: 'power3.out',
+        delay: i * 0.05,
         scrollTrigger: {
           trigger: '.eco-points',
-          start: 'top 80%',
+          start: 'top 88%',
           once: true,
         },
       });

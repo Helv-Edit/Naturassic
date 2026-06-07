@@ -54,10 +54,10 @@
 
       /* Image : fondu + légère translation horizontale */
       gsap.fromTo(img,
-        { opacity: 0, x: isReverse ? 30 : -30 },
+        { opacity: 0, x: isReverse ? 24 : -24 },
         {
-          opacity: 1, x: 0, duration: 1.1, ease: 'power2.out',
-          scrollTrigger: { trigger: row, start: 'top 78%', once: true },
+          opacity: 1, x: 0, duration: 0.7, ease: 'power3.out',
+          scrollTrigger: { trigger: row, start: 'top 88%', once: true },
         }
       );
 
@@ -66,12 +66,11 @@
         '.circuit-difficulty, h2, .circuit-kicker, .circuit-stats,' +
         '.circuit-desc, .circuit-highlights, .circuit-fauna-block, .btn'
       );
-      gsap.set(children, { opacity: 0, y: 20 });
+      gsap.set(children, { opacity: 0, y: 16 });
       gsap.to(children, {
-        opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
-        stagger: 0.08,
-        scrollTrigger: { trigger: row, start: 'top 72%', once: true },
-        delay: 0.15,
+        opacity: 1, y: 0, duration: 0.55, ease: 'power3.out',
+        stagger: 0.05,
+        scrollTrigger: { trigger: row, start: 'top 88%', once: true },
       });
     });
 
@@ -82,9 +81,9 @@
 
     gsap.to(['.journee-eyebrow', '.journee-content h2', '.journee-kicker',
              '.journee-desc', '.journee-included', '.journee-price', '.journee-section .btn'], {
-      opacity: 1, y: 0, duration: 0.85, ease: 'power2.out',
-      stagger: 0.1,
-      scrollTrigger: { trigger: '.journee-section', start: 'top 75%', once: true },
+      opacity: 1, y: 0, duration: 0.55, ease: 'power3.out',
+      stagger: 0.05,
+      scrollTrigger: { trigger: '.journee-section', start: 'top 85%', once: true },
     });
 
     /* -- Faune : cartes en cascade -- */
@@ -92,18 +91,18 @@
 
     gsap.utils.toArray('.faune-card').forEach((card, i) => {
       gsap.to(card, {
-        opacity: 1, y: 0, duration: 0.9, ease: 'power2.out',
-        delay: (i % 3) * 0.1,
-        scrollTrigger: { trigger: '.faune-grid', start: 'top 82%', once: true },
+        opacity: 1, y: 0, duration: 0.55, ease: 'power3.out',
+        delay: (i % 3) * 0.05,
+        scrollTrigger: { trigger: '.faune-grid', start: 'top 88%', once: true },
       });
     });
 
     /* -- Révélations génériques .reveal -- */
-    gsap.set('.reveal', { opacity: 0, y: 20 });
+    gsap.set('.reveal', { opacity: 0, y: 16 });
     gsap.utils.toArray('.reveal').forEach((el) => {
       gsap.to(el, {
-        opacity: 1, y: 0, duration: 0.9, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 80%', once: true },
+        opacity: 1, y: 0, duration: 0.55, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
       });
     });
   }
